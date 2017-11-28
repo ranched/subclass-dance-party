@@ -9,7 +9,7 @@ body{
 body, a:link, a:visited, a:active {
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .lineupButton{
   padding:5px 12px;
   float:right;
 }
@@ -25,8 +25,29 @@ body, a:link, a:visited, a:active {
   border-radius:10px;
   position:absolute;
 }
+.blinklydancer{
+  
+}
 .square{
+  border: 10px solid white;
   width: 100px;
   height: 100px;
   background: red;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  content: url("pics/triangle.png");
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
 }
