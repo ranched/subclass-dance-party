@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url("pics/background.jpeg");
   font-size: 18px;
 }
 body, a:link, a:visited, a:active {
@@ -21,27 +21,30 @@ body, a:link, a:visited, a:active {
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  
   position:absolute;
 }
-.blinklydancer{
-  
+.blinkydancer{
+  border:10px solid red;
+  border-radius:10px;
 }
 .square{
-  border: 10px solid white;
+  border:10px solid white;
+  border-radius:10px;
   width: 100px;
   height: 100px;
   background: red;
 }
 
 .spinner {
-  width: 20px;
-  height: 20px;
+  width: 75px;
+  height: 75px;
   content: url("pics/triangle.png");
   animation-name: spin;
+  animation-duration: 5000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  
 }
 
 @keyframes spin {

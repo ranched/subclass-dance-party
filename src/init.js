@@ -27,23 +27,39 @@ $(document).ready(function() {
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
+    
+    dancer.$node.mouseenter(function() {
+      var top = $(this).css('top');
+      var left = $(this).css('left');
+      var context = this;
+      
+      var func = function() {
+        collapse.call(context, func);
+      };
+      func.id = setTimeout(func, 100);
+      //alert(id); 
+      $(this).mouseleave(function() {
+        clearTimeout(func.id);
+      });   
+    });
+    
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
   });
   
   $('.lineupButton').on('click', function(event) {
     for (var i = 0, j = 20; i < window.dancers.length; i++) {
-      //window.dancers[i].setPosition(300, j);
-      console.log('here');
       var $dancer = window.dancers[i].$node;
       $dancer.css('top', 100);
       var width = parseInt($dancer.css('width'));
       j = j + 250;
-      console.log('width ' + width);
-      console.log('j ' + j);
-      console.log('left ', width + j);
       $dancer.css('left', j + width);
     }
   });
+  
+  var collapse = function(func) {
+    console.log('Whithin collapse function: ', this);
+    func.id = setTimeout(func, 100);
+  };
 });
 

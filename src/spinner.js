@@ -5,3 +5,8 @@ var Spinner = function(top, left, spinTime) {
 };
 
 Spinner.prototype = Object.create(Dancer.prototype);
+Spinner.prototype.constructor = Spinner;
+
+Spinner.prototype.step = function() {
+  Dancer.prototype.step.call(this);
+};
